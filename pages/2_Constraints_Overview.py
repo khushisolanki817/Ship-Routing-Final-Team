@@ -286,7 +286,7 @@ with _rc:
         st.session_state.route_params   = {}
         st.session_state.replan_log     = []
         st.session_state.route_calculated = False
-        st.switch_page("1_Login.py")
+        st.switch_page("Login.py")
 
 st.markdown("<h2 style='margin:0 0 4px'>Constraints Overview</h2>", unsafe_allow_html=True)
 st.markdown("<p style='color:#3a6080;font-size:13px;margin:0 0 20px'>Click any constraint card to see exactly how it affects routing</p>", unsafe_allow_html=True)
