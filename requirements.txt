@@ -1,3 +1,5 @@
 streamlit
 scipy
 global-land-mask
+folium
+streamlit-folium
