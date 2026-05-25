@@ -25,7 +25,7 @@ st.set_page_config(
 
 # ── auth guard ──
 if not st.session_state.get("authenticated"):
-    st.switch_page("1_Login.py")
+    st.switch_page("Login.py")
 
 # ── CSS ──
 st.markdown("""
