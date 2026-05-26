@@ -17,6 +17,8 @@ import numpy as np
 from datetime import datetime
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 st.set_page_config(
     page_title="Maritime DSS — Summary",
