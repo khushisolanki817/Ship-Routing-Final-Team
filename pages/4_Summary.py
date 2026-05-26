@@ -404,18 +404,16 @@ if st.session_state.get("replan_log"):
 
 # ── bottom nav ────────────────────────────────────────────────
 st.markdown("<div style='height:24px'></div>", unsafe_allow_html=True)
-nb1, nb2, nb3 = st.columns([1, 3, 1])
+nb1, nb2 = st.columns([1, 4])
+
 with nb1:
     if st.button("← Back to Map", use_container_width=True):
-        st.switch_page("pages/3_Route_Map.py")
+        st.switch_page("pages/Route_Map.py")
+
 with nb2:
     if st.button("🔄 Plan New Route", use_container_width=True):
         st.session_state.route_calculated = False
         st.session_state.all_routes       = {}
         st.session_state.all_stats        = {}
         st.session_state.replan_log       = []
-        st.switch_page("pages/2_Constraints_Overview.py")
-with nb3:
-    if st.button("🚪 Logout", use_container_width=True):
-        st.session_state.authenticated = False
-        st.switch_page("Login.py")
+        st.switch_page("pages/Constraints_Overview.py")

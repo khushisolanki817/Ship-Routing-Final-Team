@@ -346,10 +346,10 @@ with left:
         st.error("Origin and destination must differ.")
 
     st.markdown('<div class="sec-hdr">Vessel type</div>', unsafe_allow_html=True)
-    ship_type = st.selectbox("Select Ship Type", list(SHIP_PROFILES.keys()), label_visibility="collapsed")
+    ship_type = st.selectbox("Select Vessel Type Profile", list(SHIP_PROFILES.keys()), label_visibility="collapsed")
 
     st.markdown('<div class="sec-hdr">Fuel level</div>', unsafe_allow_html=True)
-    fuel_pct = st.slider("fuel", 10, 100, 80, 5, label_visibility="collapsed")
+    fuel_pct = st.slider("Fuel Percentage Level", 10, 100, 80, 5, label_visibility="collapsed")
     fuel_color = "#34d399" if fuel_pct>=50 else "#fbbf24" if fuel_pct>=25 else "#f87171"
     fuel_status = "Normal" if fuel_pct>=50 else "Low — conservative routing" if fuel_pct>=25 else "Critical — max efficiency"
     st.markdown(f"""
@@ -407,15 +407,11 @@ with right:
 
 # ── calculate button ──
 st.markdown("<div style='height:16px'></div>", unsafe_allow_html=True)
-b1, b2, b3 = st.columns([2, 1, 1])
+b1, b2 = st.columns([3, 1])
 with b1:
-    go = st.button("🗺️  Calculate All Routes → View Map",
+    go = st.button("🗺️   Calculate All Routes → View Map",
                    type="primary", disabled=(start_p==end_p),
                    use_container_width=True)
-with b3:
-    if st.button("🚪 Logout", use_container_width=True):
-        st.session_state.authenticated = False
-        st.switch_page("1_Login.py")
 
 if go and start_p != end_p:
     # store params in session state for page 3
