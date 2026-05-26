@@ -346,7 +346,7 @@ with left:
         st.error("Origin and destination must differ.")
 
     st.markdown('<div class="sec-hdr">Vessel type</div>', unsafe_allow_html=True)
-    ship_type = st.selectbox("", list(SHIP_PROFILES.keys()), label_visibility="collapsed")
+    ship_type = st.selectbox("Select Ship Type", list(SHIP_PROFILES.keys()), label_visibility="collapsed")
 
     st.markdown('<div class="sec-hdr">Fuel level</div>', unsafe_allow_html=True)
     fuel_pct = st.slider("fuel", 10, 100, 80, 5, label_visibility="collapsed")
